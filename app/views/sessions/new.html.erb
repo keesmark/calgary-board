@@ -1,25 +1,20 @@
-<div class="text-center">
-  <h1>Log in</h1>
-</div>
-
 <div class="row">
-  <div class="col-md-6 col-md-offset-3">
-
     <%= form_for(:session, url: login_path) do |f| %>
-
-      <div class="form-group">
-        <%= f.label :email, 'Email' %>
-        <%= f.email_field :email, class: 'form-control' %>
-      </div>
-
-      <div class="form-group">
-        <%= f.label :password, 'Password' %>
-        <%= f.password_field :password, class: 'form-control' %>
-      </div>
-
-      <%= f.submit 'Log in', class: 'btn btn-primary btn-block' %>
+      <form class="col s12">
+        <div class="row">
+          <div class="input-field col s12">
+            <%= f.label :email, 'メールアドレス' %>
+            <%= f.email_field :email, autocomplete: true %>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <%= f.label :password, 'パスワード' %>
+            <%= f.password_field :password, autocomplete: true %>
+          </div>
+        </div>
+      <%= f.submit 'ログイン', class: 'waves-effect waves-light btn' %>
     <% end %>
-
-    <p>New user? <%= link_to 'Sign up now!', signup_path %></p>
+    </form>
+    <p>まだ登録してない人はこちらからどうぞ <%= link_to '登録!', signup_path %></p>
   </div>
-</div>

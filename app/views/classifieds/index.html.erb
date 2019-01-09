@@ -1,0 +1,13 @@
+<%= link_to '新規投稿'.html_safe, new_classified_path, class: "btn" %>
+
+  <% @new_classifieds.each do |classified| %>
+    <div class="card">
+      <div class="card-content">
+        <span class="card-title"><%= classified.title %></span>
+        <p><%= classified.content %></p>
+      </div>
+      <div class="card-action">
+        <%= link_to '詳細を見る'.html_safe, classifieds_path %>
+      </div>
+    </div>
+  <% end %>

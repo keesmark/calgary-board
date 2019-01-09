@@ -1,0 +1,31 @@
+<ul class="collapsible">
+  <li>
+    <div class="collapsible-header"><i class="material-icons">place</i>エリア</div>
+    <div class="collapsible-body">
+      <span>
+        <ul>
+          <li><%= link_to "ダウンタウン", area_path(id: 1) %></li>
+          <div class="divider"></div>
+          <li><%= link_to "NE", area_path(id: 1) %></li>
+          <div class="divider"></div>
+          <li><%= link_to "NW", area_path(id: 2) %></li>
+          <div class="divider"></div>
+          <li><%= link_to "SE", area_path(id: 3) %></li>
+          <div class="divider"></div>
+          <li><%= link_to "SW", area_path(id: 4) %></li>
+          <div class="divider"></div>
+        </ul>
+      </span>
+    </div>
+  </li>
+  <li>
+    <div class="collapsible-header"><i class="material-icons">dvr</i>カテゴリー</div>
+    <div class="collapsible-body">
+      <span>
+        <ul>
+          <li><%= link_to "売ります・買います", category_path(id: 1) %></li>
+        </ul>
+      </span>
+    </div>
+  </li>
+</ul>

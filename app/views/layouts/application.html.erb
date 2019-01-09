@@ -7,20 +7,26 @@
 
     <title>Microposts</title>
     <%= csrf_meta_tags %>
-
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <%= stylesheet_link_tag  'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    
   </head>
 
   <body>
     <%= render 'layouts/navbar' %>
-
-    <div class="container">
-      <%= render 'layouts/flash_messages' %>
-
-      <%= yield %>
-    </div>
+    <main>
+      <div class="container">
+        <div class="row">
+            <%= render 'layouts/flash_messages' %>
+            <%= yield %>
+        </div>
+      </div>
+    </main>
+    <%= render 'layouts/footer' %>
+    
   </body>
 </html>

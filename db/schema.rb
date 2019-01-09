@@ -10,7 +10,37 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181203074815) do
+ActiveRecord::Schema.define(version: 20181206024931) do
+
+  create_table "areas", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "classifieds", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "user_id"
+    t.integer  "area_id"
+    t.integer  "category_id"
+    t.string   "title"
+    t.string   "tel"
+    t.string   "image_1"
+    t.string   "image_2"
+    t.string   "image_3"
+    t.string   "image_4"
+    t.text     "content",     limit: 65535
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+    t.index ["area_id"], name: "index_classifieds_on_area_id", using: :btree
+    t.index ["category_id"], name: "index_classifieds_on_category_id", using: :btree
+    t.index ["user_id"], name: "index_classifieds_on_user_id", using: :btree
+  end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
@@ -20,4 +50,7 @@ ActiveRecord::Schema.define(version: 20181203074815) do
     t.datetime "updated_at",      null: false
   end
 
+  add_foreign_key "classifieds", "areas"
+  add_foreign_key "classifieds", "categories"
+  add_foreign_key "classifieds", "users"
 end

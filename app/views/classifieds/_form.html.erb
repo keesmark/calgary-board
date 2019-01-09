@@ -1,0 +1,26 @@
+<div class="text-center">
+  <h2>クラシファイド投稿</h2>
+</div>
+
+  <%= form_for(@classified) do |f| %>
+  <%= render 'layouts/error_messages', model: f.object %>
+    
+        <div class="input-field col s12">
+          <%= f.label :title, 'タイトル' %>
+          <%= f.text_field :title, autocomplete: true %>
+        </div>
+        <div class="input-field col s6 m6">
+            <%= f.label :area, 'エリア' %>
+            <%= f.collection_select :area_id, Area.all, :id, :name, prompt: "" %>
+        </div>
+        <div class="input-field col s6 m6">
+            <%= f.label :category, 'カテゴリー' %>
+            <%= f.collection_select :category_id, Category.all, :id, :name, prompt: "" %>
+        </div>
+        <div class="input-field col s12">
+          <%= f.label :content, '本文', class: 'active' %>
+          <%= f.text_area :content, autocomplete: true, class: "materialize-textarea" %>
+        </div>
+
+    <%= f.submit '投稿', class: 'waves-effect waves-light btn white-text' %>
+  <% end %>
