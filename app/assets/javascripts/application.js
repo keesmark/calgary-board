@@ -1,4 +1,4 @@
-/*global$*/
+/*global $*/
 /*global M*/
 //= require materialize
 document.addEventListener('DOMContentLoaded', function() {

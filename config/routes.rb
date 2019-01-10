@@ -10,4 +10,5 @@ Rails.application.routes.draw do
   resources :classifieds
   resources :areas, only: [:show]
   resources :categories, only: [:show]
+  resources :items, only: [:show]
 end

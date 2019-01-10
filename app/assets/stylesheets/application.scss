@@ -15,15 +15,28 @@ main {
 /*----------------
 nav
 ------------------*/
-.collapsible {
-  .active {
-    .collapsible-header {
-      i {
-        transform: rotate(180deg);
+nav {
+  margin-bottom: 20px;
+}
+.sidenav {
+  .collapsible {
+    .active {
+      .collapsible-header {
+        i {
+          transform: rotate(180deg);
+        }
       }
     }
   }
 }
+
+@media (min-width: 992px) {
+  .brand-logo {
+    margin-left: 20px;
+  }
+}
+
+
 /*----------------
 card list
 ------------------*/

@@ -55,6 +55,7 @@ class ClassifiedsController < ApplicationController
       :title,
       :content,
       :category_id,
+      :item_id,
       :area_id,
       :tel,
       :user,

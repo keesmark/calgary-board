@@ -1,13 +1,10 @@
-<div class="col s12 m3">
-  <%= render 'layouts/sidebar' %>
-</div>
-<div class="col s12 m9">
+<div class="col s12 m9 push-m3">
   <%= link_to '新規投稿'.html_safe, new_classified_path, class: "btn" %>
   <% @classifieds.each do |classified| %>
     <div class="card">
       <div class="card-content">
         <span class="card-title"><%= classified.title.truncate(50) %></span>
-        <p><%= classified.updated_at %></p>
+        <p><span class="new badge red"><%= classified.category.name %></span><span class="new badge blue"><%= classified.area.name %></span><span class="badge"><%= classified.updated_at %></span></p>
         <p class="truncate"><%= classified.content %></p>
       </div>
       <div class="card-action">
@@ -15,4 +12,7 @@
       </div>
     </div>
   <% end %>
+</div>
+<div class="col s12 m3 pull-m9">
+  <%= render 'layouts/sidebar' %>
 </div>
