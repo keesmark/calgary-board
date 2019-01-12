@@ -24,4 +24,5 @@ document.addEventListener('DOMContentLoaded', function() {
 $(document).ready(function(){
   $(".dropdown-trigger").dropdown();
   $('select').formSelect();
+  $('.slider').slider();
 });
