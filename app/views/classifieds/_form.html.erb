@@ -10,12 +10,53 @@
           <%= f.text_field :title, autocomplete: true %>
         </div>
         <div class="input-field col s6 m6">
-          <%= f.label :area, 'エリア' %>
-          <%= f.collection_select :area_id, Area.all, :id, :name, prompt: "" %>
+          <%= f.collection_select :area_id, Area.all, :id, :name, prompt: "エリア" %>
         </div>
         <div class="input-field col s6 m6">
-          <%= f.label :category, 'カテゴリー' %>
-          <%= f.collection_select :category_id, Category.all, :id, :name, prompt: "" %>
+          <%= f.collection_select :category_id, Category.all, :id, :name, prompt: "カテゴリー" %>
+        </div>
+        <div class="file-field input-field col s12">
+          <div class="btn">
+            <span>File</span>
+            <input type="file">
+          </div>
+          <div class="file-path-wrapper">
+            <input class="file-path validate" type="text" placeholder="1つ目の写真を選択">
+          </div> 
+            <%= f.file_field :image_1 %>
+        </div>
+        
+        <div class="file-field input-field col s12">
+          <div class="btn">
+            <span>File</span>
+            <input type="file">
+          </div>
+          <div class="file-path-wrapper">
+            <input class="file-path validate" type="text" placeholder="２つ目の写真を選択">
+          </div> 
+            <%= f.file_field :image_2 %>
+        </div>
+        
+        <div class="file-field input-field col s12">
+          <div class="btn">
+            <span>File</span>
+            <input type="file">
+          </div>
+          <div class="file-path-wrapper">
+            <input class="file-path validate" type="text" placeholder="3つ目の写真を選択">
+          </div> 
+            <%= f.file_field :image_3 %>
+        </div>
+        
+        <div class="file-field input-field col s12">
+          <div class="btn">
+            <span>File</span>
+            <input type="file">
+          </div>
+          <div class="file-path-wrapper">
+            <input class="file-path validate" type="text" placeholder="4つ目の写真を選択">
+          </div> 
+            <%= f.file_field :image_4 %>
         </div>
         <div class="input-field col s12">
           <%= f.label :content, '本文', class: 'active' %>

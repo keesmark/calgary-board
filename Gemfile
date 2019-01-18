@@ -53,3 +53,7 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'kaminari'
 gem 'materialize-sass'
+gem 'carrierwave'
+gem 'fog-aws'
+gem 'rmagick'
+gem 'dotenv-rails'

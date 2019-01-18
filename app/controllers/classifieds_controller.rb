@@ -60,9 +60,13 @@ class ClassifiedsController < ApplicationController
       :tel,
       :user,
       :image_1,
+      :image_1_cache,
       :image_2,
+      :image_2_cache,
       :image_3,
+      :image_3_cache,
       :image_4,
+      :image_4_cache,
       :agreement
       )
   end

@@ -25,4 +25,5 @@ $(document).ready(function(){
   $(".dropdown-trigger").dropdown();
   $('select').formSelect();
   $('.slider').slider();
+  $('.materialboxed').materialbox();
 });

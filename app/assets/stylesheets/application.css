@@ -30,4 +30,10 @@ card list
 .card .card-content {
   word-break: break-all; }
 
+/*----------------
+post show
+------------------*/
+.post_content {
+  padding-top: 30px !important; }
+
 /*# sourceMappingURL=application.css.map */

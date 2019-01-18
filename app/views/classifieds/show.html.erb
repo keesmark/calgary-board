@@ -1,47 +1,40 @@
 <div class="col s12 m9 push-m3">
+  
   <div class="card">
-    <div class="card-image">
-      <% if @classified.image_1? %>
-      <div class="slider">
-        <ul class="slides">
-          <li>
-            <img src="https://lorempixel.com/580/250/nature/1"> <!-- random image -->
-            <div class="caption center-align">
-              <h3>This is our big Tagline!</h3>
-              <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
-            </div>
-          </li>
-          <li>
-            <img src="https://lorempixel.com/580/250/nature/2"> <!-- random image -->
-            <div class="caption left-align">
-              <h3>Left Aligned Caption</h3>
-              <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
-            </div>
-          </li>
-          <li>
-            <img src="https://lorempixel.com/580/250/nature/3"> <!-- random image -->
-            <div class="caption right-align">
-              <h3>Right Aligned Caption</h3>
-              <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
-            </div>
-          </li>
-          <li>
-            <img src="https://lorempixel.com/580/250/nature/4"> <!-- random image -->
-            <div class="caption center-align">
-              <h3>This is our big Tagline!</h3>
-              <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
-            </div>
-          </li>
-        </ul>
-      </div>
-      <% end %>
-      
-      
-    </div>
     <div class="card-content">
-      <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
+      <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">send</i></a>
       <span class="card-title"><%= @classified.title %></span>
-      <p><%= @classified.content %></p>
+      <div class="card-image">
+        <% if @classified.image_1? %>
+        <div class="slider">
+          <ul class="slides">
+            <li>
+              <%= image_tag @classified.image_1.url.to_s, class: 'materialboxed' %>
+            </li>
+            <% if @classified.image_2? %>
+            <li>
+              <%= image_tag @classified.image_2.url.to_s, class: 'materialboxed' %>
+            </li>
+            <% end %>
+            <% if @classified.image_3? %>
+            <li>
+              <%= image_tag @classified.image_3.url.to_s, class: 'materialboxed' %>
+            </li>
+            <% end %>
+            <% if @classified.image_4? %>
+            <li>
+              <%= image_tag @classified.image_4.url.to_s, class: 'materialboxed' %>
+            </li>
+            <% end %>
+          </ul>
+        </div>
+        <% end %>
+        <p><span class="badge">更新日：<%= @classified.updated_at %></span><span class="new badge red" data-badge-caption=""><%= @classified.category.name %></span><span class="new badge blue" data-badge-caption=""><%= @classified.area.name %></span></p>
+        <p class="post_content">
+          内容：<br><br>
+          <%= @classified.content %>
+        </p>
+      </div>
     </div>
   </div>
 </div>
