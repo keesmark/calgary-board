@@ -4,7 +4,7 @@
     <div class="collapsible-body">
       <span>
         <ul>
-          <li><%= link_to "全て", area_path(Area.all) %></li>
+          <li><%= link_to "全て", areas_path %></li>
           <li><%= link_to "ダウンタウン", area_path(id: 1) %></li>
           <li><%= link_to "NE", area_path(id: 2) %></li>
           <li><%= link_to "NW", area_path(id: 3) %></li>
@@ -19,6 +19,7 @@
     <div class="collapsible-body">
       <span>
         <ul>
+          <li><%= link_to "全て", categories_path %></li>
           <li><%= link_to "売ります・買います", category_path(id: 1) %></li>
           <li><%= link_to "部屋", category_path(id: 2) %></li>
           <li><%= link_to "求人", category_path(id: 3) %></li>

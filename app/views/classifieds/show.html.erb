@@ -2,7 +2,7 @@
   
   <div class="card">
     <div class="card-content">
-      <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">send</i></a>
+      <%= link_to "send", classified_inquiry_path(@classified), class: "material-icons btn-floating halfway-fab waves-effect waves-light red" %>
       <span class="card-title"><%= @classified.title %></span>
       <div class="card-image">
         <% if @classified.image_1? %>

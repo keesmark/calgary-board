@@ -1,15 +1,13 @@
 <% if model.errors.any? %>
   <div class="error">
     <ul>
-      
-        <% model.errors.full_messages.each do |message| %>
-          <li>
-            <script type="text/javascript">
-            M.toast({html: '<%= message %>', classes: 'rounded #0288d1 light-blue darken-2'})
-            </script>
-            </li>
-        <% end %>
-      
+    <% model.errors.full_messages.each do |message| %>
+      <li>
+        <script type="text/javascript">
+        M.toast({html: '<%= message %>', classes: 'rounded #0288d1 light-blue darken-2'})
+        </script>
+      </li>
+    <% end %>
     </ul>
   </div>
 <% end %>
