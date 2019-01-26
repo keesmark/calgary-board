@@ -3,10 +3,12 @@ Rails.application.routes.draw do
   
   get 'login', to: 'sessions#new'
   post 'login', to: 'sessions#create'
-  get 'logout', to: 'sessions#destroy'
+  delete 'logout', to: 'sessions#destroy'
 
   get 'signup', to: 'users#new'
-  resources :users, only: [:index, :show, :new, :create]
+  resources :users do
+    get :admin, on: :collection
+  end
   
   resources :classifieds do
     get 'inquiry', to: 'inquiry#classified_index'
@@ -20,4 +22,7 @@ Rails.application.routes.draw do
   get 'inquiry', to: 'inquiry#index'
   post 'inquiry/confirm', to: 'inquiry#confirm'
   post 'inquiry/thanks', to: 'inquiry#thanks'
+  
+  get 'policy', to: 'classifieds#policy'
+  get 'term', to: 'classifieds#term'
 end

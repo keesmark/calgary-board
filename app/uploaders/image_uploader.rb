@@ -33,7 +33,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   # version :thumb do
   #   process resize_to_fit: [50, 50]
   # end
-  process :resize_to_limit => [1200, 1000]
+  process :resize_to_limit => [1000, 1200]
 
   version :thumb do
     process resize_to_fit: [150, 170]

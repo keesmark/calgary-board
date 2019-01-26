@@ -1,7 +1,8 @@
 class ClassifiedsController < ApplicationController
   before_action :require_user_logged_in, only: [:create, :edit, :destroy]
   before_action :set_classified, only: [:show, :edit, :update, :destroy]
-  
+  before_action :correct_user, only: [:destroy, :edit]
+
   def index
     @classfied = Classified.order(updated_at: :desc).page(params[:page]).per(10)
     @new_classifieds = Classified.order(created_at: :desc).limit(6)
@@ -23,8 +24,8 @@ class ClassifiedsController < ApplicationController
   end
 
   def destroy
-    @classified = Classsified.find(params[:id])
-    @classfied.destroy
+    @classified = Classified.find(params[:id])
+    @classified.destroy
     
     flash[:green] = '投稿は削除されました'
     redirect_to classifieds_url
@@ -44,9 +45,9 @@ class ClassifiedsController < ApplicationController
   end
   
   def correct_user
-    @classified = current_user.classified.find_by(id: params[:id])
+    @classified = current_user.classifieds.find_by(id: params[:id])
     unless @classified
-      redirect_to root_url
+      redirect_to root_url  unless current_user.admin_flag?
     end
   end
   

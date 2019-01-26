@@ -1,0 +1,29 @@
+<div class="valign-wrapper col s12">
+  <h2>ユーザー情報更新</h2>
+</div>
+<div class="col s12">
+  <%= form_for(@user) do |f| %>
+    <%= render 'layouts/error_messages', model: f.object %>
+    <div class="input-field col s12">
+      <%= f.label :name, '名前' %>
+      <%= f.text_field :name, autocomplete: true %>
+    </div>
+    <div class="input-field col s12">
+      <%= f.label :email, 'メールアドレス' %>
+      <%= f.email_field :email, autocomplete: true %>
+    </div>
+    <div class="input-field col s12">
+      <%= f.label :current_password, '現在のパスワード' %>
+      <%= f.password_field :current_password, autocomplete: true %>
+    </div>
+    <div class="input-field col s12">
+      <%= f.label :password, '新しいパスワード' %>
+      <%= f.password_field :password, autocomplete: true %>
+    </div>
+    <div class="input-field col s12">
+      <%= f.label :password_confirmation, 'もう1度パスワード' %>
+      <%= f.password_field :password_confirmation, autocomplete: true %>
+    </div>
+    <%= f.submit '変更', class: 'waves-effect waves-light btn white-text' %>
+  <% end %>
+</div>

@@ -2,24 +2,30 @@
   <div class="container">
     <div class="row">
       <div class="col l6 s12">
-        <h5 class="white-text">Footer Content</h5>
-        <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+        <h5 class="white-text">Cloud Calgary</h5>
+        <p class="grey-text text-lighten-4">カルガリー在住の日本人のための掲示板</p>
       </div>
       <div class="col l4 offset-l2 s12">
-        <h5 class="white-text">Links</h5>
+        <h5 class="white-text">サイトマップ</h5>
         <ul>
-          <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
-          <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
-          <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
-          <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+          <li>
+            <% if logged_in? %>
+              <%= link_to 'ログイン', login_path, class: "grey-text text-lighten-3" %>
+            <% else %>
+              <%= link_to '会員登録', signup_path, class: "grey-text text-lighten-3" %>
+            <% end %>
+          </li>
+          <li><%= link_to 'クラシファイド', classifieds_path, class: "grey-text text-lighten-3" %></li>
+          <li><%= link_to '利用規約', term_path, class: "grey-text text-lighten-3" %></li>
+          <li><%= link_to 'プライバシーポリシー', policy_path, class: "grey-text text-lighten-3" %></li>
         </ul>
       </div>
     </div>
   </div>
   <div class="footer-copyright">
     <div class="container">
-    © 2014 Copyright Text
-    <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+    © 2019 Copyright <a href="https://cloud-calgary.com" class="grey-text text-lighten-4">cloud-calgary.com</a>
+    <a class="grey-text text-lighten-4 right" href="https://katsuhisa-hata.com">created by Katsuhisa-hata.com</a>
     </div>
   </div>
 </footer>
