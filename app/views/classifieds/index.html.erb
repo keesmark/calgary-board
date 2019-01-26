@@ -1,5 +1,8 @@
 <div class="col s12 m9 push-m3">
-  <%= link_to '新規投稿'.html_safe, new_classified_path, class: "btn post_btn" %>
+  <div class="fixed-action-btn">
+    <%= link_to '<i class="large material-icons">mode_edit</i>'.html_safe, new_classified_path, class: "btn-floating btn-large waves-effect waves-light red" %>
+  </div>
+  
   <% @new_classifieds.each do |classified| %>
     <div class="card">
       <div class="card-content">
@@ -7,7 +10,7 @@
         <p><span class="badge"><%= classified.updated_at %></span></p>
       </div>
       <div class="card-action">
-        <%= link_to '詳細を見る'.html_safe, classified %><span class="new badge red" data-badge-caption=""><%= classified.category.name %></span><span class="new badge blue" data-badge-caption=""><%= classified.area.name %></span>
+        <%= link_to '詳細'.html_safe, classified %><span class="new badge red" data-badge-caption=""><%= classified.category.name %></span><span class="new badge blue" data-badge-caption=""><%= classified.area.name %></span>
       </div>
     </div>
   <% end %>

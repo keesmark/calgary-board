@@ -1,8 +1,8 @@
 <div class="col s12">
   <ul class="collection with-header">
-    <li class="collection-header"><h4><%= @user.name %></h4></li>
-    <li class="collection-header"><h4><%= @user.email %></h4></li>
-    <li class="collection-item"><%= link_to "ユーザー情報の変更", edit_user_path(current_user), class: 'waves-effect waves-light btn' %></li>
-    <li class="collection-item"><%= link_to 'アカウントを削除する', @user, method: :delete, data: { confirm: '本当に削除してよろしいですか？' }, class: "waves-effect waves-light btn" %></li>
+    <li class="collection-header"><%= @user.name %></li>
+    <li class="collection-header"><%= @user.email %></li>
+    <li class="collection-item"><%= link_to "ユーザー情報の変更", edit_user_path(current_user), class: 'waves-effect waves-light btn blue' %></li>
+    <li class="collection-item"><%= link_to 'アカウントを削除する', @user, method: :delete, data: { confirm: '本当に削除してよろしいですか？' }, class: "waves-effect waves-light btn red" %></li>
   </ul>
 </div>

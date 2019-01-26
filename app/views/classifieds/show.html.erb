@@ -8,21 +8,21 @@
         <div class="slider">
           <ul class="slides">
             <li>
-              <%= image_tag @classified.image_1.url.to_s, class: 'materialboxed' %>
+              <%= image_tag @classified.image_1.url.to_s %>
             </li>
             <% if @classified.image_2? %>
             <li>
-              <%= image_tag @classified.image_2.url.to_s, class: 'materialboxed' %>
+              <%= image_tag @classified.image_2.url.to_s %>
             </li>
             <% end %>
             <% if @classified.image_3? %>
             <li>
-              <%= image_tag @classified.image_3.url.to_s, class: 'materialboxed' %>
+              <%= image_tag @classified.image_3.url.to_s %>
             </li>
             <% end %>
             <% if @classified.image_4? %>
             <li>
-              <%= image_tag @classified.image_4.url.to_s, class: 'materialboxed' %>
+              <%= image_tag @classified.image_4.url.to_s %>
             </li>
             <% end %>
           </ul>
@@ -36,12 +36,15 @@
           <%= @classified.content %>
         </p>
         <div class="card_content">
-          投稿者：<%= @classified.user.name %><%= link_to '<i class="material-icons right">send</i>メールを送る'.html_safe, classified_inquiry_path(@classified), class: "waves-effect waves-light btn" %>
+          投稿者：<%= @classified.user.name %>
         </div>
       </div>
+    </div>
+    <div class="card-action">
+      <%= link_to '<i class="material-icons right">send</i>メール'.html_safe, classified_inquiry_path(@classified), class: "waves-effect waves-light btn" %>
       <% if current_user == @classified.user %>
-        <%= link_to 'この投稿を編集する', edit_classified_path(@classified), class: "waves-effect waves-light btn current_user_btn" %>
-        <%= link_to 'この投稿を削除する', @classified, method: :delete, data: { confirm: '本当に削除してよろしいですか？' }, class: "waves-effect waves-light btn current_user_btn" %>
+        <%= link_to '編集', edit_classified_path(@classified), class: "waves-effect waves-light btn current_user_btn blue" %>
+        <%= link_to '削除', @classified, method: :delete, data: { confirm: '本当に削除してよろしいですか？' }, class: "waves-effect waves-light btn current_user_btn red" %>
       <% end %>
     </div>
   </div>

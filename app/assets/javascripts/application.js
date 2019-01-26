@@ -2,9 +2,6 @@
 /*global M*/
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
-//= require_tree
-
 //= require materialize
 document.addEventListener('DOMContentLoaded', function() {
   var elems = document.querySelectorAll('.sidenav');
@@ -30,6 +27,5 @@ $(document).ready(function(){
   $(".dropdown-trigger").dropdown();
   $('select').formSelect();
   $('.slider').slider();
-  $('.materialboxed').materialbox();
   $('.fixed-action-btn').floatingActionButton();
 });
