@@ -26,6 +26,9 @@ nav
 ------------------*/
 nav {
   margin-bottom: 20px; }
+  nav #logo {
+    height: 50px;
+    width: auto; }
 
 .sidenav .collapsible .active .collapsible-header i {
   transform: rotate(180deg); }
