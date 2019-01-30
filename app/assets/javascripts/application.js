@@ -21,11 +21,11 @@ document.addEventListener('DOMContentLoaded', function() {
   var elems = document.querySelectorAll('.collapsible');
   var instances = M.Collapsible.init(elems);
 });
-  
 
 $(document).ready(function(){
   $(".dropdown-trigger").dropdown();
   $('select').formSelect();
   $('.slider').slider();
   $('.fixed-action-btn').floatingActionButton();
+  $('.materialboxed').materialbox();
 });

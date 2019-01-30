@@ -8,21 +8,21 @@
         <div class="slider">
           <ul class="slides">
             <li>
-              <%= image_tag @classified.image_1.url.to_s %>
+              <%= image_tag @classified.image_1.url.to_s, class: "materialboxed" %>
             </li>
             <% if @classified.image_2? %>
             <li>
-              <%= image_tag @classified.image_2.url.to_s %>
+              <%= image_tag @classified.image_2.url.to_s, class: "materialboxed" %>
             </li>
             <% end %>
             <% if @classified.image_3? %>
             <li>
-              <%= image_tag @classified.image_3.url.to_s %>
+              <%= image_tag @classified.image_3.url.to_s, class: "materialboxed" %>
             </li>
             <% end %>
             <% if @classified.image_4? %>
             <li>
-              <%= image_tag @classified.image_4.url.to_s %>
+              <%= image_tag @classified.image_4.url.to_s, class: "materialboxed" %>
             </li>
             <% end %>
           </ul>
