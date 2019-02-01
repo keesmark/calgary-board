@@ -5,7 +5,7 @@ class ClassifiedsController < ApplicationController
 
   def index
     @classfied = Classified.order(updated_at: :desc).page(params[:page]).per(10)
-    @new_classifieds = Classified.order(created_at: :desc).limit(6)
+    @new_classifieds = Classified.order(created_at: :desc).page(params[:page]).per(10)
   end
   
   def new

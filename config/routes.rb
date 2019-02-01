@@ -25,4 +25,6 @@ Rails.application.routes.draw do
   
   get 'policy', to: 'classifieds#policy'
   get 'term', to: 'classifieds#term'
+  get 'sitemap', to: redirect('https://s3-ap-northeast-1.amazonaws.com/calgary-board/sitemaps/sitemap.xml.gz')
+
 end

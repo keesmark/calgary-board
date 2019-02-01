@@ -11,10 +11,10 @@
 <% end %>
 <nav>
   <div class="nav-wrapper red grey-text text-lighten-3">
-    <a href="http://cloud-calgary.com/" class="brand-logo">Cloud Calgary</a>
+    <a href="https://www.cloud-calgary.com/" class="brand-logo">Cloud Calgary</a>
     <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
     <ul class="right hide-on-med-and-down">
-      <li><a href="http://cloud-calgary.com/">Home</a></li>
+      <li><a href="https://www.cloud-calgary.com/">Home</a></li>
       <% if logged_in? %>
         <li><a class="dropdown-trigger" href="#!" data-target="dropdown1"><%= current_user.name %><i class="material-icons right">arrow_drop_down</i></a></li>
       <% else %>
@@ -33,7 +33,7 @@
           <div class="collapsible-header"><%= current_user.name %><i class="material-icons">arrow_drop_down</i></div>
           <div class="collapsible-body">
             <ul>
-              <li><a href="http://cloud-calgary.com/">Home</a></li>
+              <li><a href="https://www.cloud-calgary.com/">Home</a></li>
               <% if current_user.admin_flag? %>
                 <li><%= link_to 'Admin', admin_users_path %></li>
               <% else %>

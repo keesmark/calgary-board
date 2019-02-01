@@ -1,3 +1,8 @@
-Notice#send_mail
-
-<%= @greeting %>, find me in app/views/notice_mailer/send_mail.text.erb
+Webサイトからお問い合わせがありました。
+ 
+--------------------------
+Name: <%= @inquiry.name %>
+Email: <%= @inquiry.email %>
+Message:
+<%= @inquiry.message %>
+--------------------------

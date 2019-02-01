@@ -1,8 +1,9 @@
+
 <div class="col s12 m9 push-m3">
   <div class="fixed-action-btn">
     <%= link_to '<i class="large material-icons">mode_edit</i>'.html_safe, new_classified_path, class: "btn-floating btn-large waves-effect waves-light red" %>
   </div>
-  
+  <% breadcrumb :classifieds %>
   <% @new_classifieds.each do |classified| %>
     <div class="card">
       <div class="card-content">
@@ -14,6 +15,9 @@
       </div>
     </div>
   <% end %>
+  <div class="col s12 m9 center-align">
+    <%= paginate @new_classifieds %>
+  </div>
 </div>
 <div class="col s12 m3 pull-m9">
   <%= render 'layouts/sidebar' %>
