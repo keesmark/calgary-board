@@ -7,8 +7,18 @@ crumb :classifieds do
   parent :root
 end
 
+crumb :areas do 
+  link "全エリア", areas_path
+  parent :classifieds
+end
+
 crumb :area do |area|
   link area.name, area
+  parent :classifieds
+end
+
+crumb :categories do
+  link "全カテゴリー", categories_path
   parent :classifieds
 end
 
