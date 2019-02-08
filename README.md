@@ -1,24 +1,7 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+This is a web project for all Japanese immigrants in Calgary to provide latest local news and information. This web also act as a online classified site for local residence to buy/sell, exchange information and find job opportunities.
 
-* Ruby version
+I use Ruby on rails, Javascript, HTML, CSS and Materialize framework.
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
